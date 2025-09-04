@@ -1,0 +1,31 @@
+detection: Detects password change events in windows environments
+id: ECS-SIG-RTD-01
+status: experimental
+description: Detection alerts when a password change events occurs on windows systems
+references: 
+    - https://woshub.com/ad-users-blank-password-not-required/
+    -https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements
+    - https://attack.mitre.org/techniques/T1078/
+    - https://www.cisecurity.org/cis-benchmarks 
+author: Ryan Wilson
+date: 2025/09/04
+logsource: 
+    category: account_change
+    product: windows
+    service: security
+detection: 
+    sel_eventId: 
+         EventId: 
+            - 4723
+            - 4724
+            - 4725
+    condition: sel_eventId
+fields: 
+    - @timestamp
+    - @EventID
+    - TargetUserName
+    - SubjectUserName
+    - LogonType
+falsepositives: 
+    - Normal account administration
+level: High
