@@ -1,0 +1,26 @@
+title: Testing Web Generation
+id: c6026800-39d8-4373-9122-1ddceddaaf05
+status: experimental
+description: Testing
+references: []
+author: Ryan Wilson
+date: '2025-09-04'
+tags:
+- info.testing
+logsource:
+  product: apache
+  service: access
+  category: webserver
+detection:
+  sel_request:
+    request|contains:
+    - GET
+    - POST
+  condition: sel_request
+fields:
+- timestamp
+- request
+falsepositives:
+- something here 1
+- something here 2
+level: low
