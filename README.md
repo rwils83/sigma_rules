@@ -1,4 +1,4 @@
-# Sigma Rule Wizard (OOP)
+# Sigma Rule Wizard
 
 An interactive Python wizard for generating **Sigma rules** at scale — with UUIDs, presets (Windows Security, Sysmon, Apache), multiple selections (`sel_*`), validation, and clean YAML output.
 
