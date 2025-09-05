@@ -1,0 +1,27 @@
+title: Testing Windows Generation
+id: 22bce854-8032-4ba7-b735-a8de74da4634
+status: experimental
+description: Testing
+references: []
+author: Ryan Wilson
+date: '2025-09-04'
+tags:
+- sigma.testing
+- sigma.informational
+logsource:
+  product: windows
+  service: security
+  category: account_change
+detection:
+  sel_eventid:
+    EventID:
+    - '4723'
+    - '4724'
+    - '4725'
+  condition: sel_eventid
+fields:
+- timestamp
+- EventID
+falsepositives:
+- admin activities
+level: low
